@@ -1,33 +1,33 @@
 import React from 'react'
-import { Alert, Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { RootStackParamList } from '../navigator/StackNavigator'
 import { StackScreenProps } from '@react-navigation/stack'
 import { BUTTON_COLOR, PRIMARY_COLOR, PRIMARY_COLOR_DARK } from '../commons/ConstantColors'
 
-interface Props extends StackScreenProps <RootStackParamList, 'Tienda'> { };
+interface Props extends StackScreenProps <RootStackParamList, 'Veterinarias'> { };
 
-export const Tienda = ({navigation}: Props) => {
+export const Veterinarias = ({navigation}: Props) => {
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>¡Tiendas Recomendadas!</Text> 
-        <Image style={styles.img} source={{uri: 'https://cdn-icons-png.flaticon.com/128/1581/1581600.png'}} />
-        <Text style={styles.text1}>Conoce las mejores tiendas de comida, accesorios, productos y servios para tu mascota.</Text>
+        <Text style={styles.title}>¡Veterinarias Recomendadas!</Text> 
+        <Image style={styles.img} source={{uri: 'https://cdn-icons-png.flaticon.com/128/2934/2934749.png'}} />
+        <Text style={styles.text1}>Conoce las veterinarias más seguras y confiables para tu mascota.</Text>
         <View style={styles.tarje1}>
-            <Image style={styles.img1} source={{uri: 'https://cdn-icons-png.flaticon.com/128/3659/3659779.png'}} />
+            <Image style={styles.img1} source={{uri: 'https://cdn-icons-png.flaticon.com/128/2954/2954418.png'}} />
             <Text style={styles.text2}>
-            Nombre: PawLand
+            Nombre: PawCare Veterinaria
             {'\n'}
-            Descripción: Tu tienda de confiaza donde encontraras desde alimentos premium hasta accesorios y juguetes para tu mascota.
+            Descripción: Nos especializamos en el cuidado integral de tu mascota, con más de 15 años de experiencia.
             {'\n'}
-            Dirección: Av. Juan de Alcazar y Matín de la calle 
+            Dirección: Av. Rodrigo de Chavez y Pedro de Alfaro
             </Text>
         </View>
         <View style={styles.tarje2}>
-            <Image style={styles.img1} source={{uri: 'https://cdn-icons-png.flaticon.com/128/5029/5029313.png'}} />
+            <Image style={styles.img1} source={{uri: 'https://cdn-icons-png.flaticon.com/128/403/403890.png'}} />
             <Text style={styles.text2}>
-            Nombre: AnimalSmart Quito
+            Nombre: VetAmor y Cuidado
             {'\n'}
-            Descripción: Tienda reconocida y de confianza donde encontrars accesorios y servicios de belleza para tu mascota.
+            Descripción: Creemos que cada mascota merece amor y atención especializada, contamos con personal de élite y de confianza.
             {'\n'}
             Dirección: Avenida Patria y 9 de Octubre
             </Text>
@@ -35,10 +35,7 @@ export const Tienda = ({navigation}: Props) => {
         <TouchableOpacity style={styles.botR}>
             <Button title="Volver" color={BUTTON_COLOR} onPress={() => navigation.navigate('Inicio')} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botS}>
-            <Button title="Más" color={BUTTON_COLOR} onPress={() => Alert.alert('Pronto se cargaran más tiendas')}/>
-        </TouchableOpacity>
-        <Text style={styles.text3}>¡Revisa diariamente esta seccion para encontrar ofertas únicas!</Text>
+        <Text style={styles.text3}>¡Dentro de poco ingresaremos nuevas veterinarias, mantente actualizado!</Text>
     </View>
   )
 }
@@ -100,24 +97,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 20, 
-        alignSelf: 'flex-start',  
-        position: 'absolute',
-        top: '92%',
-        left: '5%',
-    },
-    botS: {
-        borderRadius: 10,
-        padding: 10,
-        fontSize: 20,      
-        alignSelf: 'flex-end',  
-        position: 'absolute',
-        top: '92%',
-        right: '5%',
+        alignSelf: 'center',
+        position: 'absolute',  
+        top: '90%',
     },
     text3: {
         fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center',
         top: '8%',
+        marginHorizontal: 10,
     }
 })

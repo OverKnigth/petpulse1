@@ -1,16 +1,13 @@
-import {SafeAreaView} from 'react-native';
-import { Inicio } from './src/screens/Inicio';
-import { Tienda } from './src/screens/Tienda';
-import { Consultas } from './src/screens/Consultas';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigator } from './src/navigator/StackNavigator';
 
 //import Vectores from './src/screens/Vectores';
 export const App = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-     <Inicio/>
-     {/* <Tienda/> */}
-     {/* <Consultas/> */}
-    </SafeAreaView>
+      <NavigationContainer>
+        <StackNavigator/>
+      </NavigationContainer>
   );
 };
 

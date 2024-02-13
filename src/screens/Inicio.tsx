@@ -1,7 +1,12 @@
+import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import {Alert, Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { RootStackParamList } from '../navigator/StackNavigator';
+import { BUTTON_COLOR, PRIMARY_COLOR, PRIMARY_COLOR_DARK, SECOND_COLOR } from '../commons/ConstantColors';
 
-export const Inicio = () => {
+interface Props extends StackScreenProps <RootStackParamList, 'Inicio'> { };
+
+export const Inicio = ({navigation}: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>¡BIENVENIDO!</Text>
@@ -14,13 +19,13 @@ export const Inicio = () => {
       <Text style={styles.frase}>"La alegría de tener una mascota es un regalo que perdura toda la vida."</Text>
       <View style={styles.boxBot}>
         <TouchableOpacity>
-          <Button title="Consultas" color={'#C7E9B0'} onPress={() => Alert.alert('Cargando la Sección de Consultas')} />
+          <Button title="Consultas" color={BUTTON_COLOR} onPress={() => navigation.navigate('Consultas')} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.bot}>
-          <Button title="Tiendas" color={'#C7E9B0'} onPress={() => Alert.alert('Cargando la Sección de Tiendas')}/>
+          <Button title="Tiendas" color={BUTTON_COLOR} onPress={() => navigation.navigate('Tienda')}/>
         </TouchableOpacity>
         <TouchableOpacity>
-        <Button title="Veterinarias" color={'#C7E9B0'} onPress={() => Alert.alert('Cargando la Sección de Veterinarias')} />
+        <Button title="Veterinarias" color={BUTTON_COLOR} onPress={() => navigation.navigate('Veterinarias')} />
         </TouchableOpacity>
       </View>
       <Text style={styles.text2}>Consejo del Día:</Text>
@@ -42,7 +47,7 @@ export const Inicio = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FCE1',
+    backgroundColor: PRIMARY_COLOR,
     alignItems: 'center',
   },
   title: {
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   frase: {
-      backgroundColor: '#E9EDC9',
+      backgroundColor: PRIMARY_COLOR_DARK,
       borderRadius: 10,
       padding: 5,
       top: '7%',
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
       fontSize: 20,
   },
   frase2: {
-    backgroundColor: '#E9EDC9',
+    backgroundColor: PRIMARY_COLOR_DARK,
     borderRadius: 10,
     padding: 5,
     top: '16%',
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     top: '12%',
-    backgroundColor: '#E5FDD1',
+    backgroundColor: SECOND_COLOR,
     borderRadius: 10,
     padding: 5,   
     marginHorizontal: 20,
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
   },
   noti: {
     top: '14%',
-    backgroundColor: '#E5FDD1',
+    backgroundColor: SECOND_COLOR,
     borderRadius: 10,
     padding: 5,   
     marginHorizontal: 20,

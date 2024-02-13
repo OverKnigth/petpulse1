@@ -1,7 +1,12 @@
 import React from 'react'
 import { Alert, Button, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { RootStackParamList } from '../navigator/StackNavigator'
+import { StackScreenProps } from '@react-navigation/stack'
+import { BUTTON_COLOR, PRIMARY_COLOR, PRIMARY_COLOR_DARK } from '../commons/ConstantColors'
 
-export const Consultas = () => {
+interface Props extends StackScreenProps <RootStackParamList, 'Consultas'> { };
+
+export const Consultas = ({navigation}: Props) => {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>¡Consultas!</Text>
@@ -11,7 +16,7 @@ export const Consultas = () => {
             <TextInput placeholder="Ingresa una consulta" style={styles.text2} />
         </View>
         <TouchableOpacity style={styles.bot}>
-            <Button title="Enviar" color={'#C7E9B0'} onPress={() => Alert.alert('Cargando información')} />
+            <Button title="Enviar" color={BUTTON_COLOR} onPress={() => Alert.alert('Cargando información')} />
         </TouchableOpacity>
         <Text style={styles.text3}>Preguntas Frecuentes</Text>
         <View style={styles.fren}>
@@ -23,7 +28,7 @@ export const Consultas = () => {
             <Text style={styles.text4}>La esterilización es recomendada entre los 6 meses y 1 año de edad, pero es mejor discutir el momento específico con tu veterinario para adaptarlo a las necesidades de tu mascota.</Text>
         </View>
         <TouchableOpacity style={styles.botR}>
-            <Button title="Volver" color={'#C7E9B0'} onPress={() => Alert.alert('Volviendo al Inicio')} />
+            <Button title="Volver" color={BUTTON_COLOR} onPress={() => navigation.navigate('Inicio')} />
         </TouchableOpacity>
     </View>
   )
@@ -32,7 +37,7 @@ export const Consultas = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F9FCE1',
+        backgroundColor: PRIMARY_COLOR,
         alignItems: 'center',
     },  
     title: {
@@ -51,7 +56,7 @@ const styles = StyleSheet.create({
         left: '40%',
     },
     busq1: {
-        backgroundColor: '#E9EDC9',
+        backgroundColor: PRIMARY_COLOR_DARK,
         borderRadius: 10,
         padding: 10,
         top: '12%',
@@ -73,14 +78,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     fren: {
-        backgroundColor: '#E9EDC9',
+        backgroundColor: PRIMARY_COLOR_DARK,
         borderRadius: 10,
         padding: 10,
         top: '12%',
         width: '90%',
     },
     fren2: {
-        backgroundColor: '#E9EDC9',
+        backgroundColor: PRIMARY_COLOR_DARK,
         borderRadius: 10,
         padding: 10,
         top: '15%',
