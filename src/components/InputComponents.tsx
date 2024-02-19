@@ -7,6 +7,7 @@ interface InputProps {
     name: string;
     isPassword?: boolean;
     hasIcon?: boolean;
+    hasError: boolean;
     onChangeText: (key: string, value: string) => void;
     acctionIcon?: () => void;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, useWindowDimensions } from 'react-native'
+import { BUTTON_COLOR, PRIMARY_COLOR } from '../commons/ConstantColors';
 
 //indicador las propiedades de nuestro componente reutilizable
 interface TitleProps{
@@ -22,6 +23,7 @@ const styles= StyleSheet.create({
         paddingHorizontal:30,
         paddingVertical:30,
         textAlign:'center',
+        backgroundColor:PRIMARY_COLOR
     },
    
 })
