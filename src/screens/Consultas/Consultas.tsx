@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Alert, Button, FlatList, Image, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { RootStackParamList } from '../../navigator/StackNavigator';
 import { StackScreenProps } from '@react-navigation/stack';
@@ -23,21 +23,19 @@ const consultas: Consult[] = [
 ]
 
 export const Consultas = ({ navigation }: Props) => {
+    const [searchQuery, setSearchQuery] = useState('');
     return (
         <View style={styles.container}>
             <Text style={styles.title}>¡Consultas!</Text>
             <Text style={styles.text1}>Resuelve tus dudas y mantente informado sobre los cuidados que le debes dar a tu mascota.</Text>
             <View style={styles.busq1}>
                 <Image style={styles.img1} source={{ uri: 'https://cdn-icons-png.flaticon.com/128/1854/1854700.png' }} />
-                <TextInput placeholder="Ingresa una consulta" style={styles.text2} />
+                <TextInput placeholder="Ingresa una consulta" value={searchQuery} style={styles.text2} onChangeText={text => setSearchQuery(text)} />
             </View>
-            <TouchableOpacity style={styles.bot}>
-                <Button title="Enviar" color={BUTTON_COLOR} onPress={() => Alert.alert('Cargando información')} />
-            </TouchableOpacity>
             <Text style={styles.text3}>Preguntas Frecuentes</Text>
             <View style={styles.cardContainer}>
                 <FlatList
-                    data={consultas}
+                    data={consultas.filter(item => item.pregunta.toLowerCase().includes(searchQuery.toLowerCase()) || item.respuesta.toLowerCase().includes(searchQuery.toLowerCase()))}
                     renderItem={({ item }) => <ConsultasCard consultas={item} />}
                     keyExtractor={item => item.id.toString()}
                 />

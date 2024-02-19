@@ -3,7 +3,7 @@ import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View }
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import { hasErrorFormLogin, showSnackbar, verifyExistUser } from '../commons/authValidations';
 import { User } from '../navigator/StackNavigator';
-import { BUTTON_COLOR, ERROR_COLOR, PRIMARY_COLOR } from '../commons/ConstantColors';
+import { ERROR_COLOR, PRIMARY_COLOR } from '../commons/ConstantColors';
 import { BobyComponents } from '../components/BodyComponent';
 import { ButtonComponents } from '../components/ButtonComponents';
 import { InputComponents } from '../components/InputComponents';
