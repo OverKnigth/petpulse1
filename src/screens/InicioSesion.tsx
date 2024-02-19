@@ -72,7 +72,7 @@ export const InicioSesion = ({navigation}: Props) => {
           />
           <View style={styles.container}>
             <Text style={styles.text}>¿No tienes cuenta?</Text>
-            <TouchableOpacity onPress={() => console.log('Regístrate ahora')}>
+            <TouchableOpacity onPress={() => navigation.navigate ('Registro')}>
               <Text style={[styles.text, styles.link]}>Regístrate ahora</Text>
             </TouchableOpacity>
           </View>
@@ -129,4 +129,4 @@ export const InicioSesion = ({navigation}: Props) => {
       marginTop: 10,
     },
   });
-  
+

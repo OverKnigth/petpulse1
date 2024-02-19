@@ -29,7 +29,7 @@ export const Inicio = ({navigation}: Props) => {
         </TouchableOpacity>
       </View>
       <Text style={styles.text2}>Consejo del Día:</Text>
-      <Text style={styles.consejo}>"Proporciona un espacio tranquilo y cómodo para que tu mascota descanse y se relaje."</Text>
+      <Text style={styles.consejo}>Proporciona un espacio tranquilo y cómodo para que tu mascota descanse y se relaje.</Text>
       <Text style={styles.text3}>Noticia Destacada</Text>
       <View style={styles.noti}>
       <Text style={styles.title2}>Cambios Estacionales y el Impacto en la Salud de tus Mascotas:</Text>
@@ -121,12 +121,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title2: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',      
     textAlign: 'center',
   },
   text4: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
   },
   img2: {
